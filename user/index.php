@@ -3,7 +3,6 @@
   include_once '../template/user/navbar.php';
 ?>
   <div class="mt-3 container">
-    <hr>
     <div class="row">
       <div class="col-md-6 display-table">
         <div class="wrap">
@@ -13,7 +12,7 @@
           <div class="information">
             Silahkan klik tombol dibawah ini untuk mulai melakukan perhitungan klasifikasi anda.
           </div>
-          <div class="btn btn-go-to-klik">Mulai <i class="bi bi-arrow-right-short"></i></div>
+          <a class="btn btn-go-to-klik" href="<?= $base_url?>/user/form.php">Mulai <i class="bi bi-arrow-right-short"></i></a>
         </div>
       </div>
       <div class="col-md-6 display-table">

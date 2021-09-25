@@ -13,7 +13,7 @@
     <!-- icon bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- link css -->
-    <link rel="stylesheet" href="<?= $base_url ?>/template/user/index.css">
+    <link rel="stylesheet" href="<?= $base_url ?>/template/user/style.css">
     <!-- font brand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

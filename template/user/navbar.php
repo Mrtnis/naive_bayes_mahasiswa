@@ -3,3 +3,6 @@
     <span class="mb-0 h3 fw-bolder text-brand">Klasifikasi Naive Bayes</span>
   </div>
 </nav>
+<div class="container">
+  <hr>
+</div>

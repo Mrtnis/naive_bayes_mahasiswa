@@ -58,7 +58,7 @@ function cekData($jk, $angkatan, $jurusan, $ipk, $skor){
     $nilai_sangat_paham = $nilai_jk[2]*$nilai_angkatan[2]*$nilai_jurusan[2]*$nilai_ipk[2]*$nilai_skor[2]*$label_bagi[2];
 
     // init variable hasil
-    $hasil;
+    $hasil = '';
 
     // cek max value
     $max = max($nilai_tidak_paham, $nilai_paham, $nilai_sangat_paham);

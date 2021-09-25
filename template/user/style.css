@@ -19,8 +19,14 @@
   color: #118ab2;
 }
 .btn-go-to-klik {
-  margin-top: 20px;
   background: linear-gradient(to right, #073b4c 50%, #118ab2 50%);
+}
+.btn-go-to-back {
+  background: linear-gradient(to right, #a4133c 50%, #f47068 50%);
+}
+.btn-go-to-klik,
+.btn-go-to-back {
+  margin-top: 20px;
   background-size: 200% 100%;
   background-position: right bottom;
   color: #fff;
@@ -32,7 +38,8 @@
   border: none;
   transition: all 0.5s ease-out;
 }
-.btn-go-to-klik:hover {
+.btn-go-to-klik:hover,
+.btn-go-to-back:hover {
   color: #fff;
   background-position: left bottom;
 }
@@ -43,4 +50,17 @@
   text-align: center;
   width: 400px;
   height: 400px;
+}
+.card {
+  border-radius: 20px;
+}
+.title-form {
+  font-weight: 600;
+  font-size: 30px;
+  color: #118ab2;
+}
+.line-form {
+  margin-left: 75px;
+  margin-right: 75px;
+  color: #118ab2;
 }
