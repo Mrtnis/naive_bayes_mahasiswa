@@ -4,6 +4,9 @@
 .text-brand {
   color: #118ab2;
 }
+.link-brand {
+  text-decoration: none;
+}
 .display-table {
   display: table;
 }
@@ -63,4 +66,31 @@
   margin-left: 75px;
   margin-right: 75px;
   color: #118ab2;
+}
+.card-result {
+  height: 400px;
+  border-radius: 20px;
+  display: table;
+}
+.wrap-result {
+  display: table-cell;
+  vertical-align: middle;
+}
+.text-result {
+  text-align: center;
+  font-size: 30px;
+}
+.text-back {
+  text-align: center;
+  color: #fff;
+}
+.text-back a {
+  color: #fff;
+  text-decoration: none;
+}
+.bg-paham {
+  background-color: #52b788;
+}
+.bg-sangat-paham {
+  background-color: #ffcbf2;
 }

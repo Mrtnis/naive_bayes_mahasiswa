@@ -1,7 +1,6 @@
 <?php
   include_once '../template/user/header.php';
   include_once '../template/user/navbar.php';
-  include_once '../metode/index.php';
 ?>
   <div class="container">
     <div class="row mb-3">
@@ -19,7 +18,7 @@
                 <hr class="line-form">
               </div>
             </div>
-            <form action="" method="post">
+            <form action="<?= $base_url ?>/user/result.php" method="post">
               <div class="mb-3">
                 <label class="form-label">Jenis Kelamin : </label>
                 <select class="form-select" name="jk" required>

@@ -37,6 +37,10 @@
         
         include_once 'cek.php';
 
-        echo cekData($jk, $angkatan, $jurusan, $ipk, $skor);
+        $result = cekData($jk, $angkatan, $jurusan, $ipk, $skor);
+    }
+
+    if (!$result) {
+        header("Location: index.php");
     }
 ?>
