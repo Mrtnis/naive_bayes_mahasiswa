@@ -1,0 +1,46 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+.text-brand {
+  color: #118ab2;
+}
+.display-table {
+  display: table;
+}
+.wrap {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.title {
+  font-size: 55px;
+}
+.bold-info {
+  color: #118ab2;
+}
+.btn-go-to-klik {
+  margin-top: 20px;
+  background: linear-gradient(to right, #073b4c 50%, #118ab2 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: #fff;
+  border-radius: 17px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  transition: all 0.5s ease-out;
+}
+.btn-go-to-klik:hover {
+  color: #fff;
+  background-position: left bottom;
+}
+
+.img-landing {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+}
