@@ -94,3 +94,7 @@
 .bg-sangat-paham {
   background-color: #ffcbf2;
 }
+.title-question,
+.form-label {
+  font-weight: 600;
+}

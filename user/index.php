@@ -10,7 +10,7 @@
             Selamat Datang, <b class="bold-info">User</b>
           </div>
           <div class="information">
-            Silahkan klik tombol dibawah ini untuk mulai melakukan perhitungan klasifikasi anda.
+            Silahkan klik tombol dibawah ini untuk mulai memberikan pendapat anda mengenai perkuliahan secara daring.
           </div>
           <a class="btn btn-go-to-klik" href="<?= $base_url?>/user/form.php">Mulai <i class="bi bi-arrow-right-short"></i></a>
         </div>

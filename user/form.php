@@ -20,6 +20,10 @@
             </div>
             <form action="<?= $base_url ?>/user/result.php" method="post">
               <div class="mb-3">
+                <label class="form-label">Nama Anda : </label>
+                <input class="form-control" type="text" placeholder="Isikan nama anda..." name="nama" required>
+              </div>
+              <div class="mb-3">
                 <label class="form-label">Jenis Kelamin : </label>
                 <select class="form-select" name="jk" required>
                   <option value="lk">Laki-laki</option>
@@ -46,9 +50,8 @@
                 <label class="form-label">IPK : </label>
                 <input class="form-control" type="double" placeholder="Isikan nilai ipk anda. Tanda 'koma' diganti dengan 'titik'. Contohnya: 3,5 menjadi 3.5" name="ipk" required>
               </div>
-              <div class="">
-                <label class="form-label">Skor : </label>
-                <input class="form-control" type="number" placeholder="Skor sementara" name="skor" required>
+              <div class="mb-3">
+                <?php include_once './soal.php'; ?>
               </div>
               <div class="mb-3 float-end">
                 <button class="btn-go-to-klik" type="submit" name="check">Cek Data</button>

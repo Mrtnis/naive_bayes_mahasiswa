@@ -33,7 +33,10 @@
         $angkatan = $_POST['angkatan'];
         $jurusan = $_POST['jurusan'];
         $ipk = $_POST['ipk'];
-        $skor = $_POST['skor'];
+        $skor = 0;
+        foreach ($_POST['skor'] as $cek_skor) {
+            $skor += $cek_skor;
+        }
         
         include_once 'cek.php';
 
