@@ -1,0 +1,64 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+.text-brand {
+  color: #118ab2;
+}
+.link-brand {
+  text-decoration: none;
+}
+.logout {
+  color: #a4133c;
+}
+.logout:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+/* sidebar */
+.sidebar {
+  border-radius: 20px;
+  padding: 5%;
+  border: none;
+  display: table;
+  width: 100%;
+}
+.sidebar .card-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.sidebar .card-body .row {
+  margin-bottom: 20px;
+  color: #118ab2;
+  padding: 10px;
+  border-radius: 20px;
+}
+.bold-text {
+  font-weight: bolder;
+  color: #fff !important;
+  background-color: #118ab2;
+  border-radius: 30px;
+  padding: 15px;
+  text-align: center;
+}
+.list-data {
+  text-decoration: none;
+  color: #118ab2;
+}
+
+/* body */
+.body-element {
+  border-radius: 20px;
+  border: none;
+  min-height: 74vh;
+}
+
+/* dashboard */
+.title-dashboard {
+  color: #118ab2;
+}
+.img-dashboard {
+  height: 200px;
+}
