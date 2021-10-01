@@ -11,8 +11,10 @@
 }
 .logout {
   color: #a4133c;
+  text-decoration: none;
 }
 .logout:hover {
+  color: #a4133c;
   cursor: pointer;
   font-weight: bolder;
 }
@@ -61,4 +63,34 @@
 }
 .img-dashboard {
   height: 200px;
+}
+.title-login {
+  font-weight: 600;
+}
+.card-login {
+  border-radius: 20px;
+  border: none;
+  background-color: #118ab2;
+  color: #fff;
+}
+.img-login {
+  width: 200px;
+}
+.btn-login {
+  background: linear-gradient(to right, #073b4c 50%, #fff 50%);
+  color: #000;
+  margin-top: 20px;
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border-radius: 17px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  transition: all 0.5s ease-out;
+}
+.btn-login:hover {
+  color: #fff;
+  background-position: left bottom;
 }

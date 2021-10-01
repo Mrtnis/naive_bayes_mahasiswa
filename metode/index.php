@@ -29,6 +29,7 @@
 
     // testing data
     if (isset($_POST['check'])) {
+        $nama = $_POST['nama'];
         $jk = $_POST['jk'];
         $angkatan = $_POST['angkatan'];
         $jurusan = $_POST['jurusan'];
@@ -41,6 +42,8 @@
         include_once 'cek.php';
 
         $result = cekData($jk, $angkatan, $jurusan, $ipk, $skor);
+
+        $insert = mysqli_query($koneksi, "INSERT INTO data_latih (id, nama, jk, angkatan, jurusan, ipk, skor, status) VALUES ('', '$nama','$jk', '$angkatan', '$jurusan', '$ipk', '$skor', '$result')");
     }
 
     if (!$result) {

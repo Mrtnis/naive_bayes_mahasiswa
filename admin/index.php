@@ -2,6 +2,10 @@
   include_once '../template/admin/header.php';
   $nav_brand = 'Dashboard Admin';
   include_once '../template/admin/navbar.php';
+  // cek login or not
+  if (!$_SESSION["username"]) {
+    header("Location: login.php");
+  }
 ?>
 
 <div class="container">
@@ -22,18 +26,7 @@
 </div>
 
 <script>
-  // function to make bold text
-  function boldText(params) {
-    // init all id
-    let allList = ['dashboard','data_latih','data_uji','cek','profil','logout']
-    allList.forEach( oneList => {
-      if (oneList == params) {
-        document.getElementById(params).classList.add('bold-text')
-      } else{
-        document.getElementById(oneList).classList.remove('bold-text')
-      }
-    });
-  }
+  document.getElementById('dashboard').classList.add('bold-text')
 </script>
 
 <?php
