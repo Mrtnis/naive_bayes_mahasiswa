@@ -54,16 +54,10 @@
 .body-element {
   border-radius: 20px;
   border: none;
-  min-height: 74vh;
+  height: 78vh;
 }
 
-/* dashboard */
-.title-dashboard {
-  color: #118ab2;
-}
-.img-dashboard {
-  height: 200px;
-}
+/* login */
 .title-login {
   font-weight: 600;
 }
@@ -93,4 +87,24 @@
 .btn-login:hover {
   color: #fff;
   background-position: left bottom;
+}
+
+/* dashboard */
+.title-dashboard {
+  color: #118ab2;
+}
+.img-dashboard {
+  height: 200px;
+}
+
+/* data latih */
+.data-latih {
+  overflow: scroll;
+}
+.data-table:hover {
+  background-color: #118ab2;
+  color: #fff;
+}
+.button {
+  cursor: pointer;
 }

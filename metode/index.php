@@ -10,7 +10,7 @@
     }
 
     // data utama
-    $data_utama = getData("SELECT * FROM data_uji");
+    $data_utama = getData("SELECT * FROM data_latih");
 
     // hitung jumlah data dan input ke label utama
     $total = count($data_utama);
@@ -43,7 +43,7 @@
 
         $result = cekData($jk, $angkatan, $jurusan, $ipk, $skor);
 
-        $insert = mysqli_query($koneksi, "INSERT INTO data_latih (id, nama, jk, angkatan, jurusan, ipk, skor, status) VALUES ('', '$nama','$jk', '$angkatan', '$jurusan', '$ipk', '$skor', '$result')");
+        $insert = mysqli_query($koneksi, "INSERT INTO data_uji (id, nama, jk, angkatan, jurusan, ipk, skor, status) VALUES ('', '$nama','$jk', '$angkatan', '$jurusan', '$ipk', '$skor', '$result')");
     }
 
     if (!$result) {

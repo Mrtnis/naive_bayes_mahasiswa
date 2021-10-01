@@ -6,24 +6,21 @@
   if (!$_SESSION["username"]) {
     header("Location: login.php");
   }
+
+  include_once 'open_sidebar.php';
 ?>
 
-<div class="container">
-  <div class="row mb-5">
-    <div class="col-md-3">
-      <?php include_once '../template/admin/sidebar.php'; ?>
-    </div>
-    <div class="col-md-9">
-      <div class="card body-element shadow">
-        <div class="card-body pt-5 ps-5">
-          <h3 class="title-dashboard">Selamat Datang, <b>Admin</b> </h3>
-          <img class="img-dashboard my-5" src="<?= $base_url ?>/template/admin/admin.svg" alt="admin">
-          <h6>Silahkan klik tombol di sidebar list sebelah kiri untuk menuju ke halaman lainnya.</h6>
-        </div>
-      </div>
-    </div>
+  <div class="card-body pt-5 ps-5">
+    <h3 class="title-dashboard">Selamat Datang, <b>Admin</b> </h3>
+    <img class="img-dashboard my-5" src="<?= $base_url ?>/template/admin/admin.svg" alt="admin">
+    <h6>Silahkan klik tombol di sidebar list sebelah kiri untuk menuju ke halaman lainnya.</h6>
   </div>
-</div>
+
+<?php
+
+  include_once 'close_sidebar.php';
+
+?>
 
 <script>
   document.getElementById('dashboard').classList.add('bold-text')

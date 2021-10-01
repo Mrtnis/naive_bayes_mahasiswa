@@ -3,11 +3,11 @@
 // membuat data label
 $laki = [];
 // data tidak paham
-$laki_tdk_paham = countData("SELECT * FROM data_uji WHERE jk='lk' AND status='tidak paham'");
+$laki_tdk_paham = countData("SELECT * FROM data_latih WHERE jk='lk' AND status='tidak paham'");
 // data paham
-$laki_paham = countData("SELECT * FROM data_uji WHERE jk='lk' AND status='paham'");
+$laki_paham = countData("SELECT * FROM data_latih WHERE jk='lk' AND status='paham'");
 // data sangat paham
-$laki_sangat_paham = countData("SELECT * FROM data_uji WHERE jk='lk' AND status='sangat paham'");
+$laki_sangat_paham = countData("SELECT * FROM data_latih WHERE jk='lk' AND status='sangat paham'");
 // push data to label
 array_push($laki, $laki_tdk_paham, $laki_paham, $laki_sangat_paham);
 
