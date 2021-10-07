@@ -1,6 +1,6 @@
 <?php
   include_once '../template/admin/header.php';
-  $nav_brand = 'Data Latih';
+  $nav_brand = 'Data Uji';
   include_once '../template/admin/navbar.php';
   // cek login or not
   if (!$_SESSION["username"]) {
@@ -11,12 +11,7 @@
 ?>
 
   <div class="card-body pt-5 data-latih small">
-    <h4 class="title-dashboard">Data Latih Klasifikasi</h4>
-    <div class="row">
-      <div class="col my-3">
-        <a href="tambah_data_latih.php" class="btn btn-add">Tambah data latih</a>
-      </div>
-    </div>
+    <h4 class="title-dashboard">Data Uji Klasifikasi</h4>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -28,7 +23,6 @@
           <th scope="col" class="px-4 align-middle">IPK</th>
           <th scope="col" class="px-4 align-middle">Skor</th>
           <th scope="col" class="px-4 align-middle">Status</th>
-          <th colspan="2" scope="col" class="px-4 align-middle">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -36,29 +30,27 @@
       <?php
         include_once '../koneksi/index.php';
         include_once '../get_data/index.php';
-        $data_latih = getData("SELECT * FROM data_latih GROUP BY id DESC");
+        $data_uji = getData("SELECT * FROM data_uji");
         $number = 1;
-        foreach ($data_latih as $dl) :
+        foreach ($data_uji as $du) :
       ?>
         <tr class="data-table text-center">
           <td><?= $number ?></td>
-          <td><?= ucwords($dl['nama']) ?></td>
+          <td><?= ucwords($du['nama']) ?></td>
           <td>
             <?php
-              if ( strtolower($dl['jk']) == 'pr' ) {
+              if ( strtolower($du['jk']) == 'pr' ) {
                 echo "Perempuan";
-              } elseif ( strtolower($dl['jk']) == 'lk' ) {
+              } elseif ( strtolower($du['jk']) == 'lk' ) {
                 echo "Laki-laki";
               }
             ?>
           </td>
-          <td><?= $dl['angkatan'] ?></td>
-          <td><?= ucwords($dl['jurusan']) ?></td>
-          <td><?= $dl['ipk'] ?></td>
-          <td><?= $dl['skor'] ?></td>
-          <td><?= ucwords($dl['status']) ?></td>
-          <td><i class="bi bi-pencil-square text-warning button"></i></td>
-          <td><i class="bi bi-trash text-danger button"></i></td>
+          <td><?= $du['angkatan'] ?></td>
+          <td><?= ucwords($du['jurusan']) ?></td>
+          <td><?= $du['ipk'] ?></td>
+          <td><?= $du['skor'] ?></td>
+          <td><?= ucwords($du['status']) ?></td>
         </tr>
       </tbody>
     <?php
@@ -70,7 +62,7 @@
   </div>
 
 <script>
-  document.getElementById('data_latih').classList.add('bold-text')
+  document.getElementById('data_uji').classList.add('bold-text')
 </script>
 
 <?php

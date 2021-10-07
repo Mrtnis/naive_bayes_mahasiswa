@@ -1,4 +1,4 @@
-<div class="container">
+<div class="mx-5">
   <div class="row mb-5">
     <div class="col-md-3">
       <?php include_once '../template/admin/sidebar.php'; ?>

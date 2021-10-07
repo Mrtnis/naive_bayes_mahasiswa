@@ -94,12 +94,15 @@
   color: #118ab2;
 }
 .img-dashboard {
-  height: 200px;
+  height: 250px;
 }
 
 /* data latih */
 .data-latih {
-  overflow: scroll;
+  overflow-y: scroll;
+}
+.data-latih::-webkit-scrollbar {
+  width: 0;
 }
 .data-table:hover {
   background-color: #118ab2;
@@ -107,4 +110,21 @@
 }
 .button {
   cursor: pointer;
+}
+.btn-add {
+  background-color: #118ab2;
+  color: #fff;
+  padding: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.btn-add:hover {
+  cursor: pointer;
+  color: #fff;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-weight: bolder;
+  transition: 0.2s ease-in;
 }
