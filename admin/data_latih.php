@@ -57,8 +57,16 @@
           <td><?= $dl['ipk'] ?></td>
           <td><?= $dl['skor'] ?></td>
           <td><?= ucwords($dl['status']) ?></td>
-          <td><i class="bi bi-pencil-square text-warning button"></i></td>
-          <td><i class="bi bi-trash text-danger button"></i></td>
+          <td class="align-middle">
+            <a href="edit_data_latih.php?id=<?= $dl['id'] ?>" class="btn-edit">
+              <i class="bi bi-pencil-square text-warning button"></i>
+            </a>
+          </td>
+          <td class="align-middle">
+            <a href="delete_data_latih.php?id=<?= $dl['id'] ?>" class="btn-delete" onclick="return  confirm('Anda yakin ingin menghapus data ini?')">
+              <i class="bi bi-trash text-danger button"></i>
+            </a>
+          </td>
         </tr>
       </tbody>
     <?php

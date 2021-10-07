@@ -75,7 +75,7 @@
             </select> 
           </div>
           <div class="mb-3 float-end">
-            <button class="btn btn-add" type="submit" name="check">Cek Data</button>
+            <button class="btn btn-add" type="submit" name="check">Tambah Data</button>
           </div>
         </form>
       </div>
