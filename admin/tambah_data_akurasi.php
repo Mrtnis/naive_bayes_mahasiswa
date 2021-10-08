@@ -1,11 +1,14 @@
 <?php
   include_once '../template/admin/header.php';
-  $nav_brand = 'Tambah Data Latih';
+  $nav_brand = 'Tambah Data Akurasi';
   include_once '../template/admin/navbar.php';
   // cek login or not
   if (!$_SESSION["username"]) {
     header("Location: login.php");
   }
+
+  // call metode
+  include_once '../metode/index.php';
 
   // testing data
   if (isset($_POST['add'])) {
@@ -17,17 +20,20 @@
     $skor = $_POST['skor'];
     $status = $_POST['status'];
 
-    include_once '../koneksi/index.php';
+    // call cek data
+    include_once '../metode/cek.php';
 
-    $insert = mysqli_query($koneksi, "INSERT INTO data_latih (id, nama, jk, angkatan, jurusan, ipk, skor, status) VALUES ('', '$nama','$jk', '$angkatan', '$jurusan', '$ipk', '$skor', '$status')");
-    header("Location: data_latih.php");
+    $result =  cekData($jk, $angkatan, $jurusan, $ipk, $skor);
+
+    $insert = mysqli_query($koneksi, "INSERT INTO data_akurasi (id, nama, jk, angkatan, jurusan, ipk, skor, status_awal, status_metode) VALUES ('', '$nama','$jk', '$angkatan', '$jurusan', '$ipk', '$skor', '$status', '$result')");
+    header("Location: cek_akurasi.php");
 }
 
   include_once 'open_sidebar.php';
 ?>
 
   <div class="card-body pt-5 data-latih small">
-    <h4 class="title-dashboard">Tambah Data Latih</h4>
+    <h4 class="title-dashboard">Tambah Data Akurasi</h4>
     <div class="row">
       <div class="col my-3">
         <form action="" method="post">
@@ -67,7 +73,7 @@
             <input class="form-control" type="number" placeholder="Isikan jumlah skor..." name="skor" required>
           </div>
           <div class="mb-3">
-            <label class="form-label">Status yang didapat : </label>
+            <label class="form-label">Status awal : </label>
             <select class="form-select" name="status" required>
               <option value="paham">Paham</option>
               <option value="tidak paham">Tidak Paham</option>

@@ -30,7 +30,7 @@
       <?php
         include_once '../koneksi/index.php';
         include_once '../get_data/index.php';
-        $data_uji = getData("SELECT * FROM data_uji");
+        $data_uji = getData("SELECT * FROM data_uji GROUP BY id DESC");
         $number = 1;
         foreach ($data_uji as $du) :
       ?>
@@ -52,11 +52,11 @@
           <td><?= $du['skor'] ?></td>
           <td><?= ucwords($du['status']) ?></td>
         </tr>
+      <?php
+        $number++;
+        endforeach;
+      ?>
       </tbody>
-    <?php
-      $number++;
-      endforeach;
-    ?>
     </table>
 
   </div>

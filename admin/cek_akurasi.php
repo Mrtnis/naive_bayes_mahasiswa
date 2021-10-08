@@ -1,6 +1,6 @@
 <?php
   include_once '../template/admin/header.php';
-  $nav_brand = 'Data Latih';
+  $nav_brand = 'Cek Akurasi';
   include_once '../template/admin/navbar.php';
   // cek login or not
   if (!$_SESSION["username"]) {
@@ -11,10 +11,10 @@
 ?>
 
   <div class="card-body pt-5 data-latih small">
-    <h4 class="title-dashboard">Data Latih Klasifikasi</h4>
+    <h4 class="title-dashboard">Cek Akurasi Metode</h4>
     <div class="row">
       <div class="col my-3">
-        <a href="tambah_data_latih.php" class="btn btn-add">Tambah data latih</a>
+        <a href="tambah_data_akurasi.php" class="btn btn-add">Tambah data akurasi</a>
       </div>
     </div>
     <table class="table table-bordered">
@@ -27,43 +27,44 @@
           <th scope="col" class="px-4 align-middle">Jurusan</th>
           <th scope="col" class="px-4 align-middle">IPK</th>
           <th scope="col" class="px-4 align-middle">Skor</th>
-          <th scope="col" class="px-4 align-middle">Status</th>
+          <th scope="col" class="px-4 align-middle">Status Awal</th>
+          <th scope="col" class="px-4 align-middle">Status Metode</th>
           <th colspan="2" scope="col" class="px-4 align-middle">Aksi</th>
         </tr>
       </thead>
       <tbody>
-      <!-- panggil data latih -->
       <?php
         include_once '../koneksi/index.php';
         include_once '../get_data/index.php';
-        $data_latih = getData("SELECT * FROM data_latih GROUP BY id DESC");
+        $data_akurasi = getData("SELECT * FROM data_akurasi GROUP BY id DESC");
         $number = 1;
-        foreach ($data_latih as $dl) :
+        foreach ($data_akurasi as $dk) :
       ?>
         <tr class="data-table text-center">
           <td><?= $number ?></td>
-          <td><?= ucwords($dl['nama']) ?></td>
+          <td><?= ucwords($dk['nama']) ?></td>
           <td>
             <?php
-              if ( strtolower($dl['jk']) == 'pr' ) {
+              if ( strtolower($dk['jk']) == 'pr' ) {
                 echo "Perempuan";
-              } elseif ( strtolower($dl['jk']) == 'lk' ) {
+              } elseif ( strtolower($dk['jk']) == 'lk' ) {
                 echo "Laki-laki";
               }
             ?>
           </td>
-          <td><?= $dl['angkatan'] ?></td>
-          <td><?= ucwords($dl['jurusan']) ?></td>
-          <td><?= $dl['ipk'] ?></td>
-          <td><?= $dl['skor'] ?></td>
-          <td><?= ucwords($dl['status']) ?></td>
+          <td><?= $dk['angkatan'] ?></td>
+          <td><?= ucwords($dk['jurusan']) ?></td>
+          <td><?= $dk['ipk'] ?></td>
+          <td><?= $dk['skor'] ?></td>
+          <td><?= ucwords($dk['status_awal']) ?></td>
+          <td><?= ucwords($dk['status_metode']) ?></td>
           <td class="align-middle">
-            <a href="edit_data_latih.php?id=<?= $dl['id'] ?>" class="btn-edit">
+            <a href="edit_data_akurasi.php?id=<?= $dk['id'] ?>" class="btn-edit">
               <i class="bi bi-pencil-square text-warning button"></i>
             </a>
           </td>
           <td class="align-middle">
-            <a href="delete_data_latih.php?id=<?= $dl['id'] ?>" class="btn-delete" onclick="return  confirm('Anda yakin ingin menghapus data ini?')">
+            <a href="delete_data_akurasi.php?id=<?= $dk['id'] ?>" class="btn-delete" onclick="return  confirm('Anda yakin ingin menghapus data ini?')">
               <i class="bi bi-trash text-danger button"></i>
             </a>
           </td>
@@ -74,11 +75,25 @@
       ?>
       </tbody>
     </table>
-
+    <!-- cek row data -->
+    <?php
+      $count_data = count($data_akurasi);
+      if ($count_data > 0) {
+    ?>
+    <div class="row float-end">
+      <div class="col">
+        <a href="hasil.php" class="btn btn-add">
+          <div>Cek Akurasi</div>
+        </a>
+      </div>
+    </div>
+    <?php
+      }
+    ?>
   </div>
 
 <script>
-  document.getElementById('data_latih').classList.add('bold-text')
+  document.getElementById('cek').classList.add('bold-text')
 </script>
 
 <?php

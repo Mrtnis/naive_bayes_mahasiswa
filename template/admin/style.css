@@ -135,3 +135,24 @@
   border-radius: 50%;
   font-size: 10px;
 }
+
+/* hasil akurasi */
+.persentase {
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.count-data {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+.data-result {
+  margin-top: 80px;
+}

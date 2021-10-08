@@ -63,11 +63,11 @@ function cekData($jk, $angkatan, $jurusan, $ipk, $skor){
     // cek max value
     $max = max($nilai_tidak_paham, $nilai_paham, $nilai_sangat_paham);
     if ($max === $nilai_tidak_paham) {
-        $hasil = "Tidak Paham";
+        $hasil = "tidak paham";
     } elseif ($max === $nilai_paham) {
-        $hasil = "Paham";
+        $hasil = "paham";
     } elseif ($max === $nilai_sangat_paham) {
-        $hasil = "Sangat Paham";
+        $hasil = "sangat paham";
     }
 
     // return hasil

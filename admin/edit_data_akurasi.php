@@ -2,7 +2,7 @@
 
   $get_id = $_GET['id'];
   include_once '../template/admin/header.php';
-  $nav_brand = 'Edit Data Latih';
+  $nav_brand = 'Edit Data Akurasi';
   include_once '../template/admin/navbar.php';
   // cek login or not
   if (!$_SESSION["username"]) {
@@ -15,10 +15,13 @@
   include_once '../get_data/index.php';
 
   // get data user
-  $get_data_user = getData("SELECT * FROM data_latih WHERE id=$get_id");
+  $get_data_user = getData("SELECT * FROM data_akurasi WHERE id=$get_id");
 
   // fetch user
   $user = $get_data_user[0];
+
+  // call metode
+  include_once '../metode/index.php';
 
   // testing data
   if (isset($_POST['edit'])) {
@@ -30,15 +33,20 @@
     $skor = $_POST['skor'];
     $status = $_POST['status'];
 
-    $insert = mysqli_query($koneksi, "UPDATE data_latih set nama='$nama', jk='$jk', angkatan='$angkatan', jurusan='$jurusan', ipk='$ipk',skor='$skor', status='$status' WHERE id='$get_id'");
-    header("Location: data_latih.php");
+    // call cek data
+    include_once '../metode/cek.php';
+
+    $result =  cekData($jk, $angkatan, $jurusan, $ipk, $skor);
+
+    $insert = mysqli_query($koneksi, "UPDATE data_akurasi set nama='$nama', jk='$jk', angkatan='$angkatan', jurusan='$jurusan', ipk='$ipk',skor='$skor', status_awal='$status', status_metode='$result' WHERE id='$get_id'");
+    header("Location: cek_akurasi.php");
   }
 
   include_once 'open_sidebar.php';
 ?>
 
   <div class="card-body pt-5 data-latih small">
-    <h4 class="title-dashboard">Edit Data Latih</h4>
+    <h4 class="title-dashboard">Edit Data Akurasi</h4>
     <div class="row">
       <div class="col my-3">
         <form action="" method="post">
@@ -137,19 +145,19 @@
             <label class="form-label">Status yang didapat : </label>
             <select class="form-select" name="status" required>
             <?php
-              if ($user['status'] == 'paham') {
+              if ($user['status_awal'] == 'paham') {
             ?>
               <option value="paham" selected>Paham</option>
               <option value="tidak paham">Tidak Paham</option>
               <option value="sangat paham">Sangat Paham</option>
             <?php
-              } elseif ($user['status'] == 'tidak paham') {
+              } elseif ($user['status_awal'] == 'tidak paham') {
             ?>
               <option value="paham">Paham</option>
               <option value="tidak paham" selected>Tidak Paham</option>
               <option value="sangat paham">Sangat Paham</option>
             <?php
-              } elseif ($user['status'] == 'sangat paham') {
+              } elseif ($user['status_awal'] == 'sangat paham') {
             ?>
               <option value="paham">Paham</option>
               <option value="tidak paham">Tidak Paham</option>
