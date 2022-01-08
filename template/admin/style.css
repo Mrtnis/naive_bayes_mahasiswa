@@ -99,10 +99,7 @@
 
 /* data latih */
 .data-latih {
-  overflow-y: scroll;
-}
-.data-latih::-webkit-scrollbar {
-  width: 0;
+  overflow: scroll;
 }
 .data-table:hover {
   background-color: #118ab2;

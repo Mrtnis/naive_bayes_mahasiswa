@@ -44,11 +44,11 @@ function cekData($jk, $angkatan, $jurusan, $ipk, $skor){
     }
 
     // skor
-    if ($skor < 40) {
+    if ($skor < 47) {
         array_push($nilai_skor, $label_hasil_bagi[4][0][0],$label_hasil_bagi[4][0][1],$label_hasil_bagi[4][0][2]);
-    } elseif ($skor >=40 && $skor <=50) {
+    } elseif ($skor >=47 && $skor <=58) {
         array_push($nilai_skor, $label_hasil_bagi[4][1][0],$label_hasil_bagi[4][1][1],$label_hasil_bagi[4][1][2]);
-    } elseif ($skor > 50) {
+    } elseif ($skor > 58) {
         array_push($nilai_skor, $label_hasil_bagi[4][2][0],$label_hasil_bagi[4][2][1],$label_hasil_bagi[4][2][2]);
     }
 

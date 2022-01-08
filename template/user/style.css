@@ -1,6 +1,9 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+.wrap-header {
+  text-align: center;
+}
 .text-brand {
   color: #118ab2;
 }
